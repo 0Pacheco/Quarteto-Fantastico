@@ -1,3 +1,7 @@
+/* -----------------------------------
+  IMPORTS E VARIÁVEIS GLOBAIS
+------------------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
 :root {
@@ -8,6 +12,10 @@
   --cinza-claro: #F5F5F5;
   --amarelo: #FFD700;
 }
+
+/* -----------------------------------
+  RESET / BASE
+------------------------------------- */
 
 *,
 *::before,
@@ -20,35 +28,37 @@
 html, body {
   height: 100%;
   font-family: sans-serif;
+  background-color: var(--azul-medio);
+  color: var(--branco);
 }
+
+/* -----------------------------------
+  TIPOGRAFIA
+------------------------------------- */
 
 body {
-  background-color: var(--azul-medio);
+  font-family: "Kdam Thmor Pro", sans-serif;
 }
 
+/* -----------------------------------
+  LAYOUT GLOBAL
+------------------------------------- */
+
 header {
-  background-color: var(--azul-escuro) ;
-  height: 90px;
+  background-color: var(--azul-escuro);
+  height: 80px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-#logo {
-  width: 60px; 
+#logo, #logo-footer {
+  width: 60px;
   height: auto;
 }
 
 nav {
   width: 60%;
-}
-
-#banner {
-  background-image: url('./assets/banner.jpg');
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 500px;
 }
 
 ul {
@@ -57,11 +67,12 @@ ul {
   width: 100%;
   justify-content: space-between;
 }
+
 li a {
   color: var(--branco);
   cursor: pointer;
   font-size: 19px;
-  transition: .5s;
+  transition: 0.5s;
   font-family: "Kdam Thmor Pro", sans-serif;
 }
 
@@ -72,6 +83,72 @@ li a:hover {
 li a:focus {
   outline: 2px solid var(--azul-logo);
 }
+
+/* Footer */
+
+footer {
+  height: 300px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--azul-escuro);
+  padding: 24px 0;
+}
+
+span {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  color: var(--branco);
+  display: block;
+}
+
+/* -----------------------------------
+  COMPONENTES GERAIS
+------------------------------------- */
+
+/* Banner */
+
+#banner {
+  background-image: url('./assets/banner.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+
+/* Botão */
+
+.button {
+  width: 200px;
+  height: 60px;
+  background-color: var(--amarelo);
+  color: var(--branco);
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.8s;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+.button:hover {
+  background-color: var(--azul-logo);
+  color: var(--branco);
+}
+
+/* -----------------------------------
+  SEÇÕES ESPECÍFICAS DO SITE
+------------------------------------- */
+
+/* Trailer container */
 
 #trailer-container {
   width: 100%;
@@ -106,27 +183,208 @@ li a:focus {
   width: 100%;
 }
 
-.button {
-  width: 200px;
-  height: 60px;
-  background-color: var(--amarelo);
-  color: var(--branco);
-  padding: 8px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: .8s;
-  font-size: 18px;
+/* Actor cards */
+
+.actor-cards-container {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  border: none;
-  outline: none;
-  margin-top: 20px;
+  margin-top: 50px;
+}
+
+.cards-content {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 20px;
+  column-gap: 40px;
+}
+
+.card {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 20px 10px;
+  color: var(--branco);
+  font-size: 17px;
   font-family: "Kdam Thmor Pro", sans-serif;
 }
 
-.button:hover {
-  background-color: var(--azul-logo);
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px var(--azul-logo);
+}
+
+.actor-1 { background-image: url('./assets/pedro-pascal.jpg'); }
+.actor-2 { background-image: url('./assets/vanessa-kirby.jpg'); }
+.actor-3 { background-image: url('./assets/joseph-quinn.jpg'); }
+.actor-4 { background-image: url('./assets/ebon-moss-bachrach.jpg'); }
+
+/* -----------------------------------
+  PÁGINAS ESPECÍFICAS
+------------------------------------- */
+
+/* Conteúdo principal padrão */
+
+.main-content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
   color: var(--branco);
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+.main-content h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Sobre */
+
+.about-page p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Contato */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: 16px;
+}
+
+/* Fotos */
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.photo-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 300px;
+}
+
+/* Comentários */
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.comment {
+  background-color: var(--azul-logo);
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-form label {
+  font-weight: 600;
+}
+
+.comment-form input,
+.comment-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: 16px;
+}
+
+/* -----------------------------------
+  RESPONSIVIDADE
+------------------------------------- */
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .photo-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  #banner {
+    background-position: 40%;
+  }
+
+  #trailer-container {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+  }
+
+  .content {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trailer {
+    width: 100%;
+  }
+
+  #sinopse {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .cards-content {
+    grid-template-columns: 1fr;
+    margin-top: 150px;
+  }
 }
