@@ -326,6 +326,10 @@ span {
   font-size: 16px;
 }
 
+.mobile-only {
+  display: none;
+}
+
 /* -----------------------------------
   RESPONSIVIDADE
 ------------------------------------- */
