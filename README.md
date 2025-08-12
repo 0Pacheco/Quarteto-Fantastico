@@ -74,6 +74,7 @@ Caso queira discutir sobre o projeto, tirar dúvidas ou colaborar:
 
 - GitHub: [0Pacheco](https://github.com/0Pacheco)
 - Email: victoremanuelpacheco957@gmail.com
+- LinkedIn: Victor Emanuel Pacheco
 
 ---
 
